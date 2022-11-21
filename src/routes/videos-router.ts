@@ -30,7 +30,7 @@ videosRouter.get('/:id', (req: Request, res: Response) => {
   res.status(404).send();
 });
 
-videosRouter.post('', (req: Request, res: Response) => {
+videosRouter.post('/', (req: Request, res: Response) => {
   const resultOfValidation = validateVideo(req.body);
 
   let availableResolutions: Array<ResloutionsType> | null;
