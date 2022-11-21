@@ -8,7 +8,7 @@ const port = process.env.PORT || 30012;
 export const app = express();
 app.use(bodyParser.json());
 
-app.delete('/testing/alldata', (req: Request, res:Response) => {
+app.delete('/testing/all-data', (req: Request, res:Response) => {
   videos.length = 0;
   res.status(204).send();
 })
