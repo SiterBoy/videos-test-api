@@ -7,9 +7,6 @@ export const resloutions: Array<ResloutionsType> = ['P144',  "P240" , 'P360',  '
 export const validateVideo = (data:IVideoPostPut): ErrorsType   => {
   const errors: Array<FieldErrorType> = [];
   let { title, author, canBeDownloaded, minAgeRestriction,  availableResolutions, publicationDate} = data;
-  if(availableResolutions) {
-    availableResolutions = JSON.parse(availableResolutions);
-  }
 
   if(!author) {
     errors.push({message: 'Author required', field: 'Author'})

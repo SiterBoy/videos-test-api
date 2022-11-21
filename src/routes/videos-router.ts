@@ -33,10 +33,6 @@ videosRouter.post('/', (req: Request, res: Response) => {
 
   let availableResolutions: Array<ResloutionsType> | null;
 
-  if(req.body.availableResolution) {
-    availableResolutions = JSON.parse(req.body.availableResolutions);
-  }
-
   if (resultOfValidation.errorsMessages.length === 0) {
     const newVideo:IVideo = {
       id: Math.round(Math.random() * Math.random() * 1000000),
@@ -46,7 +42,7 @@ videosRouter.post('/', (req: Request, res: Response) => {
       minAgeRestriction: req.body.minAgeRestriction ? +req.body.minAgeRestriction : null,
       createdAt: new Date().toISOString(),
       publicationDate: (new Date(Date.now() + (3600 * 1000 * 24))).toISOString(),
-      availableResolutions: req.body.availableResolutions? JSON.parse(req.body.availableResolutions) : null,
+      availableResolutions: req.body.availableResolutions? req.body.availableResolutions : null,
     }
 
     videos.push(newVideo)
