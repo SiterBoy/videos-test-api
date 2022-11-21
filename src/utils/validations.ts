@@ -41,9 +41,9 @@ export const validateVideo = (data:IVideoPostPut): ErrorsType   => {
     errors.push({message: 'minAgeRestriction should be between 1 and 18', field: 'minAgeRestriction'})
   }
 
-  if(publicationDate && typeof Date.parse(publicationDate) === "number" ) {
-    errors.push({message: 'publicationDate should be date', field: 'publicationDate'});
-  }
+  // if(publicationDate && typeof Date.parse(publicationDate) === "number" ) {
+  //   errors.push({message: 'publicationDate should be date', field: 'publicationDate'});
+  // }
 
   if(Array.isArray(availableResolutions)) {
     availableResolutions.forEach((el) => {
