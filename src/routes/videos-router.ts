@@ -1,8 +1,6 @@
 import {Request, Response, Router} from "express";
 import {IVideo} from "../types/interfaces/video.interface";
 import {ResloutionsType, validateVideo} from "../utils/validations";
-import bodyParser from "body-parser";
-import {FieldErrorType} from "../types/interfaces/errors.interface";
 
 export const videosRouter = Router({});
 
